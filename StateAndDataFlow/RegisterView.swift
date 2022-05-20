@@ -8,27 +8,45 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @EnvironmentObject private var userManger: UserManager
+    
+    @ObservedObject private var symbolCounter = SymbolCounter()
+    
+    @EnvironmentObject private var userManager: UserManager
+    
+    @State private var disabled = true
     
     @State private var name = ""
     
     var body: some View {
         VStack {
-            TextField("Enter your name...", text: $name)
-                .multilineTextAlignment(.center)
+            HStack {
+                TextField("Enter your name...", text: $symbolCounter.text)
+                    .multilineTextAlignment(.center)
+                Text("\(symbolCounter.counter)")
+                    .foregroundColor(symbolCounter.symbolColor(color: symbolCounter.counter))
+                
+            }
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 30))
+            
             Button(action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("OK")
+                    
                 }
+                .padding(.trailing,30)
+                .foregroundColor(symbolCounter.textColor(color: symbolCounter.counter))
+                .disabled(true)
+                
             }
         }
     }
     
     private func registerUser() {
-        if !name.isEmpty {
-            userManger.name = name
-            userManger.isRegistered.toggle()
+        if symbolCounter.text.count > 2 {
+            userManager.name = symbolCounter.text
+            userManager.isRegistered.toggle()
+           
         }
     }
 }
