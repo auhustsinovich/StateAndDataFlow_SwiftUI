@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 class StorageManager {
     
     static let shared = StorageManager()

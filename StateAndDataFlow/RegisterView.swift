@@ -10,7 +10,6 @@ import SwiftUI
 struct RegisterView: View {
     
     @ObservedObject private var symbolCounter = SymbolCounter()
-    
     @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
@@ -20,7 +19,6 @@ struct RegisterView: View {
                     .multilineTextAlignment(.center)
                 Text("\(symbolCounter.counter)")
                     .foregroundColor(symbolCounter.symbolColor(color: symbolCounter.counter))
-                
             }
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 30))
             

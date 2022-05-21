@@ -21,14 +21,24 @@ struct ContentView: View {
             Text("\(timer.counter)")
                 .font(.largeTitle)
                 .padding(.top, 90)
+            
             Spacer()
-            StartButtonView(timer: timer)
+            
+            ButtonView(title: timer.buttonTitle, color: .red) {
+                timer.startTimer()
+            }
+            
             Spacer()
             Spacer()
-            LogOutButtonView()
+            
+            ButtonView(title: "LogOut", color: .blue, action: logOuted)
                 .padding()
             
         }
+    }
+    private func logOuted() {
+        StorageManager.shared.savedBool.toggle()
+        StorageManager.shared.clearUser(userManager: user)
     }
 }
 
@@ -39,47 +49,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct StartButtonView: View {
-    
-    @ObservedObject var timer: TimeCounter
-    
-    var body: some View {
-        Button(action: timer.startTimer) {
-            Text(timer.buttonTitle)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-        }
-        .frame(width: 200, height: 60)
-        .background(.red)
-        .cornerRadius(20)
-        .overlay {
-            RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 4)
-        }
-    }
-}
-
-struct LogOutButtonView: View {
-    
-    @EnvironmentObject private var user: UserManager
-    
-    var body: some View {
-        Button(action: logOuted) {
-            Text("LogOut")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-        }
-        .frame(width: 200, height: 60)
-        .background(.blue)
-        .cornerRadius(20)
-        .overlay {
-            RoundedRectangle(cornerRadius: 20).stroke(.black,lineWidth: 4)
-        }
-    }
-    
-    private func logOuted() {
-        StorageManager.shared.savedBool.toggle()
-        StorageManager.shared.clearUser(userManager: user)
-    }
-}
