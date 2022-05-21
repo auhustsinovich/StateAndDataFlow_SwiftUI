@@ -12,7 +12,7 @@ struct StarterView: View {
     
     var body: some View {
         Group {
-            if StorageManager.shared.savedBool == false {
+            if StorageManager.shared.savedBool {
                 ContentView()
             } else {
                 RegisterView()

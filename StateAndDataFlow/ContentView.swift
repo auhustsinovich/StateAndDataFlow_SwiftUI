@@ -79,7 +79,7 @@ struct LogOutButtonView: View {
     }
     
     private func logOuted() {
-        user.user.isRegistered.toggle()
-        StorageManager.shared.clear(userManager: user)
+        StorageManager.shared.savedBool.toggle()
+        StorageManager.shared.clearUser(userManager: user)
     }
 }

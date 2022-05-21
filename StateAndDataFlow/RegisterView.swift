@@ -42,7 +42,7 @@ struct RegisterView: View {
         if symbolCounter.text.count > 2 {
             userManager.user.name = symbolCounter.text
             userManager.user.isRegistered.toggle()
-            StorageManager.shared.save(user: userManager.user)
+            StorageManager.shared.saveUser(user: userManager.user)
         }
     }
 }

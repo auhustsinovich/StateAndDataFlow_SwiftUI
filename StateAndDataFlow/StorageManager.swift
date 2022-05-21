@@ -12,24 +12,19 @@ class StorageManager {
     
     static let shared = StorageManager()
     
-    @AppStorage("NAME_KEY") var savedName = ""
-    @AppStorage("BOOL_KEY") var savedBool = false
+    @AppStorage("nameKey") var savedName = ""
+    @AppStorage("boolKey") var savedBool = false
     
     private init() {}
     
-    func save(user:User) {
+    func saveUser(user:User) {
         savedName = user.name
         savedBool = user.isRegistered
     }
     
-    func load() {
-       
-    }
-    
-    func clear(userManager:UserManager) {
+    func clearUser(userManager:UserManager) {
         userManager.user.name = ""
         userManager.user.isRegistered = false
-        
     }
 }
 
