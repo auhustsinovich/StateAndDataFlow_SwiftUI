@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject private var user: UserManager
     @StateObject private var timer = TimeCounter()
+    @EnvironmentObject private var user: UserManager
     
     var body: some View {
         VStack {
-            Text("Hi, \(user.name)")
+            Text("Hi, \(StorageManager.shared.savedName)")
                 .font(.largeTitle)
                 .padding(.top, 100)
             
@@ -79,6 +79,7 @@ struct LogOutButtonView: View {
     }
     
     private func logOuted() {
-        user.isRegistered.toggle()
+        user.user.isRegistered.toggle()
+        StorageManager.shared.clear(userManager: user)
     }
 }

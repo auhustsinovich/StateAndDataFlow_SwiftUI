@@ -8,6 +8,17 @@
 import Foundation
 
 final class UserManager: ObservableObject {
-    @Published var isRegistered = false
+    
+    @Published var user = User()
+
+    init() {}
+    
+    init(user: User) {
+        self.user = user
+    }
+}
+
+struct User: Codable {
+    var isRegistered = false
     var name = ""
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A56A7CDA2839176E006E6D23 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A7CD92839176E006E6D23 /* StorageManager.swift */; };
 		A5803ED72837F09000C91013 /* SymbolCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5803ED62837F09000C91013 /* SymbolCounter.swift */; };
 		A8EA88B0283566FE005934B6 /* StateAndDataFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA88AF283566FE005934B6 /* StateAndDataFlowApp.swift */; };
 		A8EA88B2283566FE005934B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA88B1283566FE005934B6 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A56A7CD92839176E006E6D23 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A5803ED62837F09000C91013 /* SymbolCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCounter.swift; sourceTree = "<group>"; };
 		A8EA88AC283566FE005934B6 /* StateAndDataFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateAndDataFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EA88AF283566FE005934B6 /* StateAndDataFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAndDataFlowApp.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				A8EA88C3283575E2005934B6 /* StarterView.swift */,
 				A8EA88BD28356B37005934B6 /* TimeCounter.swift */,
 				A5803ED62837F09000C91013 /* SymbolCounter.swift */,
+				A56A7CD92839176E006E6D23 /* StorageManager.swift */,
 				A8EA88C1283572FD005934B6 /* UserManager.swift */,
 				A8EA88B3283566FF005934B6 /* Assets.xcassets */,
 				A8EA88B5283566FF005934B6 /* Preview Content */,
@@ -159,6 +162,7 @@
 				A5803ED72837F09000C91013 /* SymbolCounter.swift in Sources */,
 				A8EA88C2283572FD005934B6 /* UserManager.swift in Sources */,
 				A8EA88B0283566FE005934B6 /* StateAndDataFlowApp.swift in Sources */,
+				A56A7CDA2839176E006E6D23 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

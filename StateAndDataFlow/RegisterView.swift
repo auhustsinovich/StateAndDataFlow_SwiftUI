@@ -13,10 +13,6 @@ struct RegisterView: View {
     
     @EnvironmentObject private var userManager: UserManager
     
-    @State private var disabled = true
-    
-    @State private var name = ""
-    
     var body: some View {
         VStack {
             HStack {
@@ -44,9 +40,9 @@ struct RegisterView: View {
     
     private func registerUser() {
         if symbolCounter.text.count > 2 {
-            userManager.name = symbolCounter.text
-            userManager.isRegistered.toggle()
-           
+            userManager.user.name = symbolCounter.text
+            userManager.user.isRegistered.toggle()
+            StorageManager.shared.save(user: userManager.user)
         }
     }
 }
